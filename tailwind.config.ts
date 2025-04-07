@@ -3,10 +3,10 @@ import type {Config} from "tailwindcss";
 const config: Config = {
 	darkMode: "class",
 	content: [
-		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
-		"./components/**/*.{js,ts,jsx,tsx,mdx}",
-		"./app/**/*.{js,ts,jsx,tsx,mdx}",
-		"./sanity/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/sanity/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
 		extend: {
@@ -25,10 +25,7 @@ const config: Config = {
 					"300": "#7D8087",
 					DEFAULT: "#000000",
 				},
-				white: {
-					"100": "#F7F7F7",
-					DEFAULT: "#FFFFFF",
-				},
+                white100: "#F7F7F7",
 			},
 			fontFamily: {
 				"work-sans": ["var(--font-work-sans)"],

@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "type": "module",
   "overrides": {
     "react": "$react",
     "react-dom": "$react-dom"
