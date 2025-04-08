@@ -4,7 +4,7 @@
 @config "../../tailwind.config.ts";
 /* @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"); */
 
-:root {
+/* :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
@@ -37,7 +37,7 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
-}
+} */
 
 @layer utilities {
   .flex-between {
@@ -157,7 +157,7 @@
   }
 
   .search-btn {
-    @apply size-[50px] rounded-full bg-black flex justify-center items-center;
+    @apply size-[50px] rounded-full bg-black flex justify-center text-white100 items-center;
   }
 
   /* startupcard */
@@ -249,7 +249,7 @@
   padding: 10px;
 }
 
-@theme inline {
+/* @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -319,13 +319,13 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
-}
+} */
 
-@layer base {
+/* @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
   }
-}
+} */
