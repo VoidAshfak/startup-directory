@@ -15,9 +15,9 @@ const Navbar = async () => {
                     <Image
                         src={"/logo.png"}
                         alt="logo"
-                        width={144}
-                        height={30}
-                        className="cursor-pointer"
+                        width={90}
+                        height={20}
+                        className="cursor-pointer mx-10"
                     />
                 </Link>
 
