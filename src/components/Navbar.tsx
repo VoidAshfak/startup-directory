@@ -1,10 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import { auth, signIn, signOut } from "../../auth"
+import { LogOut, BadgePlus } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+
 
 const Navbar = async () => {
 
-    const session = await auth();
+    const session:any = await auth();
     return (
         <header className='px-5 py-3 bg-white shadow-sm font-work-sans'>
             <nav className='flex justify-between items-center gap-5 text-black' >
@@ -22,25 +25,30 @@ const Navbar = async () => {
                     {session?.user ? (
                         <>
                             <Link href={"/startup/create"}>
-                                <span>Create</span>
+                                <span className="max-sm:hidden">Create</span>
+                                <BadgePlus className="size-6 sm:hidden" />
                             </Link>
-                            
+
                             <form action={
                                 async () => {
                                     "use server"
                                     await signOut();
                                 }
                             }>
-                                <button 
+                                <button
                                     type="submit"
                                     className="cursor-pointer"
                                 >
-                                    Logout
+                                    <span className="max-sm:hidden text-red-500">Logout</span>
+                                    <LogOut className="size-6 sm:hidden text-red-500" />
                                 </button>
                             </form>
 
                             <Link href={`/user/${session?.id}`}>
-                                <span> {session?.user.name} </span>
+                                <Avatar className="size-10">
+                                    <AvatarImage src={session?.user?.image} alt={session.user?.name} />
+                                    <AvatarFallback>AV</AvatarFallback>
+                                </Avatar>
                             </Link>
                         </>
                     ) : (
@@ -52,7 +60,7 @@ const Navbar = async () => {
                                 }
                             }
                         >
-                            <button 
+                            <button
                                 type="submit"
                                 className="cursor-pointer"
                             >
