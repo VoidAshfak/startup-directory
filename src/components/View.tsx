@@ -10,6 +10,7 @@ const View = async ({ id }: { id: string }) => {
     const { views } = await client.withConfig({ useCdn: false }).fetch(STARTUP_VIEWS_QUERY, { id })
 
     after(async() => {
+        
         await writeClient.patch(id).set({views: views + 1}).commit()
     })
 

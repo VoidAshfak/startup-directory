@@ -2,7 +2,7 @@ import {z} from "zod"
 
 export const formSchema = z.object({
     title: z.string().min(3).max(100),
-    description: z.string().min(20).max(1000),
+    description: z.string().max(1000),
     category: z.string().min(3).max(100),
     link: z.string().url().refine(async (url) => {
         try {
@@ -13,5 +13,5 @@ export const formSchema = z.object({
             return false
         }
     }),
-    pitch: z.string().min(20),
+    pitch: z.string(),
 })
